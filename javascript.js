@@ -35,42 +35,34 @@ function millisToSecsAndMs(millis) {
 }
 
 function createShape() {
-    // randomly choose type
-    const shape = getRandomInt(0, 1);
     div.style.display = '';
-    if (shape === circle) {
-        div.className = "circle";
-    } else {
-        div.className = "square";
-    }
+    
+    // randomly choose type
+    (getRandomInt(0, 1) === circle) ? div.className = "circle" : div.className = "square";
+    
     // randomly set colour
-    const colour = getRandomColour();
-    for (let i = 0; i < colours.length; i++) {
-        div.style.backgroundColor = colours[colour];
-    }
-    //randomly set size
+    div.style.backgroundColor = colours[getRandomColour()];
+  
+    //randomly set size (width & height must be same)
     const dimension = getRandomInt(50, 250) + 'px';
     div.style.width = dimension;
     div.style.height = dimension;
     
     //randomly set position
-    const marginTop = getRandomInt(0, 700) + 'px';
-    div.style.marginTop = marginTop;
-    const marginLeft = getRandomInt(0, 700) + 'px';
-    div.style.marginLeft = marginLeft;
+    div.style.marginTop = getRandomInt(0, 700) + 'px';
+    div.style.marginLeft = getRandomInt(0, 700) + 'px';
     
     // get start time
     startTime = Date.now();
 }
 
 // get time delay
-let delay = getRandomInterval(1, 3);
+let delay = getRandomInterval(0, 2);
     
 // shape appears at random interval
 setTimeout(createShape, delay);
 
-// when I click on shape, it disappears and new setTimeout(setShape, delay) is triggered.
-
+// When clicked the shape disappears and new setTimeout is triggered
 div.addEventListener('click', function () {
     //make shape disappear
     div.style.display = 'none';
