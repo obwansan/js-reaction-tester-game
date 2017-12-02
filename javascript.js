@@ -6,7 +6,7 @@
     - randomly a square or a circle
     - random time interval 
 * They disappear when you click them.
-* There's a timer that logs the time it takes from their appearing to being clicked is printed on screen to 3 decimal places.
+* There's a timer that logs the time it takes from their appearing to being clicked.
 **/
 
 const div =  document.querySelector('div');
@@ -37,7 +37,7 @@ function millisToSecsAndMs(millis) {
 function createShape() {
     div.style.display = '';
     
-    // randomly choose type
+    // randomly choose shape
     (getRandomInt(0, 1) === circle) ? div.className = "circle" : div.className = "square";
     
     // randomly set colour
@@ -76,32 +76,3 @@ div.addEventListener('click', function () {
     const yourTime = document.getElementById('yourTime');
     yourTime.textContent = secsAndMs + 's';
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-
