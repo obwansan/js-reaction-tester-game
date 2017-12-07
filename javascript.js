@@ -49,8 +49,8 @@ function createShape() {
     div.style.height = dimension;
     
     //randomly set position
-    div.style.marginTop = getRandomInt(0, 500) + 'px';
-    div.style.marginLeft = getRandomInt(0, 500) + 'px';
+    div.style.marginTop = getRandomInt(0, 400) + 'px';
+    div.style.marginLeft = getRandomInt(0, 700) + 'px';
     
     // get start time
     startTime = Date.now();
